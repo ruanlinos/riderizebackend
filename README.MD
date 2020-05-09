@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src="https://i.ibb.co/R0jZYvv/RIDERIZE.png" /></div>
+<p align="center"><img align="center" src="https://i.ibb.co/R0jZYvv/RIDERIZE.png" /></p>
 
 ### <div align="center">A App that allow users to add, list and remove pictures.</div>
 
