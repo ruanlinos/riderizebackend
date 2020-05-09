@@ -1,0 +1,33 @@
+type Mutation {
+  createPost(input: CreatePostInput): CreatePostPayload
+  updatePost(input: UpdatePostInput): UpdatePostPayload
+  deletePost(input: DeletePostInput): DeletePostPayload
+}
+
+input CreatePostInput {
+  image_post: String!
+}
+
+type CreatePostPayload {
+  post: Post
+  error: String
+}
+
+input DeletePostInput {
+  id: String!
+}
+
+type DeletePostPayload {
+  message: String
+  error: String
+}
+
+input UpdatePostInput {
+  id: String!
+  image_post: String!
+}
+
+type UpdatePostPayload {
+  message: String
+  error: String
+}

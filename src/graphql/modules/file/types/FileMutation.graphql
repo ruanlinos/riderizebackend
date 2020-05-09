@@ -1,0 +1,14 @@
+type Mutation {
+  uploadFile(input: UploadFileInput!): UploadFilePayload
+}
+
+input UploadFileInput {
+  clientMutationId: String
+  file: Upload!
+}
+
+type UploadFilePayload {
+  clientMutationId: String
+  file: File
+  error: String
+}

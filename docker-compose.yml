@@ -1,0 +1,55 @@
+version: '2.4'
+services:
+  api:
+    build: .
+    container_name: riderizebox-api
+    command: ['yarn', 'dev']
+    volumes:
+      - .:/usr/src/
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - '8000:8000'
+      - '9229:9229'
+    networks:
+      - riderize-network
+    env_file: .env
+
+  database:
+    image: postgres:11.2-alpine
+    container_name: riderizebox-database
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: riderizebox
+      POSTGRES_DB: riderize
+    ports:
+      - '5432:5432'
+    networks:
+      - riderize-network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migration:
+    build: .
+    command: ['yarn', 'migrate']
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - riderize-network
+  seed:
+    build: .
+    command: ['yarn', 'seed']
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - riderize-network
+
+networks:
+  riderize-network:
+    driver: bridge

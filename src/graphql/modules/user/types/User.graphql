@@ -1,0 +1,9 @@
+type User implements Node {
+  id: ID!
+  _id: String!
+  name: String!
+  email: EmailAddress!
+  image_profile: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}

@@ -1,0 +1,7 @@
+{
+  "verbose": false,
+  "execMac": {
+    "ts": "ts-node"
+  },
+  "ext" : "ts, graphql, json"
+}
