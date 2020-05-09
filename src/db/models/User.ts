@@ -39,7 +39,6 @@ export function build(sequelize: Sequelize) {
       image_profile: {
         type: DataTypes.STRING,
         allowNull: true,
-        unique: true,
       },
     },
     {

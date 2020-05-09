@@ -8,7 +8,6 @@
 
 This project was developed for the Riderize Backend Challenge with the following technologies:
 
-- [React Native](https://github.com/facebook/react-native)
 - [Typescript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Postgres](https://github.com/postgres/postgres)

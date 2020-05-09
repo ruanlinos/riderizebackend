@@ -24,7 +24,6 @@ export async function up(q: QueryInterface) {
     image_profile: {
       type: DataTypes.STRING,
       allowNull: true,
-      unique: true,
     },
     created_at: {
       type: DataTypes.DATE,
